@@ -18,11 +18,14 @@
 from pathlib import Path
 import pandas as pd
 
-# Folder where the original CSV files live, and a folder where cleaned files will be saved.
-# If you run this in Google Colab, change DATA_DIR to your Google Drive folder path.
-DATA_DIR = Path("data")
-CLEAN_DIR = Path("cleaned_data")
-CLEAN_DIR.mkdir(exist_ok=True)
+# ---- Folder settings (usually nothing to change) ----
+# These lines tell Python where your project folders are. Each name is a folder inside the
+# main project folder, and the code must be run from that main folder.
+# You only need to edit a name if you renamed the folder in your own copy of the project.
+# (In Google Colab, use the notebooks: their first cell connects to your Google Drive folder for you.)
+DATA_DIR = Path("data")             # folder holding the 6 ORIGINAL csv files (never changed)
+CLEAN_DIR = Path("cleaned_data")    # folder for the cleaned files that the tasks create and reuse
+CLEAN_DIR.mkdir(exist_ok=True)      # create the cleaned_data folder if it does not exist yet
 
 # %% [markdown]
 # ## Step 1: Load and explore the data
