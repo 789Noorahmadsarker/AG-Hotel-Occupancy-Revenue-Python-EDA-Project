@@ -13,10 +13,15 @@ from pathlib import Path
 import pandas as pd
 import matplotlib.pyplot as plt
 
-DATA_DIR = Path("data")
-CLEAN_DIR = Path("cleaned_data")
-OUT_DIR = Path("outputs")
-OUT_DIR.mkdir(exist_ok=True)
+# ---- Folder settings (usually nothing to change) ----
+# These lines tell Python where your project folders are. Each name is a folder inside the
+# main project folder, and the code must be run from that main folder.
+# You only need to edit a name if you renamed the folder in your own copy of the project.
+# (In Google Colab, use the notebooks: their first cell connects to your Google Drive folder for you.)
+DATA_DIR = Path("data")             # folder holding the 6 ORIGINAL csv files (never changed)
+CLEAN_DIR = Path("cleaned_data")    # folder for the cleaned files that the tasks create and reuse
+OUT_DIR = Path("outputs")           # folder where the charts (PNG pictures) are saved
+OUT_DIR.mkdir(exist_ok=True)        # create the outputs folder if it does not exist yet
 
 # %% [markdown]
 # ## Step 1: Load the data and add readable names
